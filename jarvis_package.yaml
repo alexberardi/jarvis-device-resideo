@@ -1,0 +1,46 @@
+name: "resideo"
+display_name: "Resideo / Honeywell Home"
+description: "Resideo / Honeywell Home thermostat control via the Home API v2. Supports Pro Series and T-Series thermostats."
+version: "1.0.0"
+min_jarvis_version: "0.9.0"
+license: "MIT"
+author:
+  github: "alexberardi"
+categories: ["smart-home", "climate"]
+platforms: ["darwin", "linux"]
+keywords: ["resideo", "honeywell", "thermostat", "hvac", "pro-series"]
+
+components:
+  - type: device_protocol
+    name: resideo
+    path: device_families/resideo/protocol.py
+
+packages:
+  - name: httpx
+
+secrets:
+  - key: RESIDEO_CONSUMER_KEY
+    scope: integration
+    value_type: string
+    description: "Honeywell Home API consumer key"
+    is_sensitive: true
+    friendly_name: "Consumer Key"
+  - key: RESIDEO_CONSUMER_SECRET
+    scope: integration
+    value_type: string
+    description: "Honeywell Home API consumer secret"
+    is_sensitive: true
+    friendly_name: "Consumer Secret"
+  - key: RESIDEO_ACCESS_TOKEN
+    scope: integration
+    value_type: string
+    description: "OAuth access token (auto-populated)"
+  - key: RESIDEO_REFRESH_TOKEN
+    scope: integration
+    value_type: string
+    description: "OAuth refresh token (auto-populated)"
+  - key: RESIDEO_TEMP_UNIT
+    scope: integration
+    value_type: string
+    description: "Temperature unit: F (default) or C"
+    is_sensitive: false
