@@ -3,7 +3,7 @@ display_name: "Resideo / Honeywell Home"
 description: "Resideo / Honeywell Home thermostat control via the Home API v2. Supports Pro Series and T-Series thermostats."
 version: "1.0.0"
 min_jarvis_version: "0.9.0"
-license: "MIT"
+license: Apache-2.0
 author:
   github: "alexberardi"
 categories: ["smart-home", "climate"]
